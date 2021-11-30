@@ -1,0 +1,27 @@
+{
+  "name": "poke-api",
+  "version": "1.0.0",
+  "description": "List some pokemons to a school exercice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brunohvc/poke-api.git"
+  },
+  "author": "Bruno Henrique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brunohvc/poke-api/issues"
+  },
+  "homepage": "https://github.com/Brunohvc/poke-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
