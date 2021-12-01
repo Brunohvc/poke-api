@@ -1,7 +1,9 @@
 const express = require('express');
 const pokeJson = require('./pokemons.json');
+const cors = require('cors');
 const pokemons = pokeJson.pokemons;
 const app = express();
+app.use(cors({ credentials: true, origin: true }));
 const router = express.Router();
 app.use(express.json());
 
@@ -28,6 +30,10 @@ router.get('/pokemon/:id', (req, res) => {
 
     if (pokemonList.length > 0) {
         pokemon = pokemonList[0];
+        pokemon.atk = 100;
+        pokemon.def = 100;
+        pokemon.atks = 100;
+        pokemon.defs = 100;
     }
 
     res.json(pokemon);
