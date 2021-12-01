@@ -30,10 +30,10 @@ router.get('/pokemon/:id', (req, res) => {
 
     if (pokemonList.length > 0) {
         pokemon = pokemonList[0];
-        pokemon.atk = 100;
-        pokemon.def = 100;
-        pokemon.atks = 100;
-        pokemon.defs = 100;
+        pokemon.atk = Math.floor(Math.random() * (1 - 100 + 1) + 1) * -1;
+        pokemon.def = Math.floor(Math.random() * (1 - 100 + 1) + 1) * -1;
+        pokemon.atks = Math.floor(Math.random() * (1 - 100 + 1) + 1) * -1;
+        pokemon.defs = Math.floor(Math.random() * (1 - 100 + 1) + 1) * -1;
     }
 
     res.json(pokemon);
