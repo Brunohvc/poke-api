@@ -9,6 +9,8 @@ app.use(express.json());
 
 const port = process.env.PORT || 8080;
 console.clear();
+const alternativeIcon = "https://www.clipartmax.com/png/middle/22-227332_pokemon-icon-png.png"
+
 
 function logger(req, res, next) {
     console.log('URL:', req.url);
@@ -20,7 +22,11 @@ function notFound(req, res) {
 }
 
 router.get('/pokedex', (req, res) => {
-    res.json(pokemons);
+    const returnlist = pokemons.map(e => {
+        e.url_icon_2 = alternativeIcon;
+        return e;
+    })
+    res.json(returnlist);
 });
 
 router.get('/pokemon/:id', (req, res) => {
@@ -34,6 +40,7 @@ router.get('/pokemon/:id', (req, res) => {
         pokemon.def = Math.floor(Math.random() * (1 - 100 + 1) + 1) * -1;
         pokemon.atks = Math.floor(Math.random() * (1 - 100 + 1) + 1) * -1;
         pokemon.defs = Math.floor(Math.random() * (1 - 100 + 1) + 1) * -1;
+        pokemon.url_icon_2 = alternativeIcon;
     }
 
     res.json(pokemon);
